@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>채현영 | Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #4a5568;
+      --bg: #ffffff;
+      --bg-alt: #f8f9fa;
+      --text: #2d3748;
+      --text-muted: #718096;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    header .title {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact a:hover {
+      color: var(--primary);
+    }
+
+    /* Intro */
+    .intro {
+      background: var(--bg-alt);
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin-bottom: 32px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .intro strong {
+      color: var(--primary);
+    }
+
+    /* Section */
+    section {
+      margin-bottom: 32px;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 16px;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: var(--bg-alt);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    /* Competencies */
+    .competencies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .competency h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .competency ul {
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .competency li {
+      margin-bottom: 4px;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 24px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .experience-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .experience-header .period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .experience-role {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .experience-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      margin-bottom: 16px;
+    }
+
+    .highlight h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .highlight ul {
+      padding-left: 20px;
+    }
+
+    .highlight li {
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    .highlight .result {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Project */
+    .project-item {
+      background: var(--bg-alt);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .project-item h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .project-item h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .project-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .project-item ul {
+      padding-left: 20px;
+      font-size: 0.9rem;
+    }
+
+    .project-item li {
+      margin-bottom: 4px;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .project-stack .skill-tag {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+    }
+
+    /* Activity */
+    .activity-item {
+      margin-bottom: 12px;
+    }
+
+    .activity-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: inline;
+    }
+
+    .activity-item .period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+
+    .activity-item p {
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    /* Education */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .edu-item h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .edu-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12px; }
+      .container { padding: 0; max-width: 100%; }
+      .project-item { background: none; border: 1px solid var(--border); }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .experience-header { flex-direction: column; }
+      .experience-header .period { margin-top: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>채현영</h1>
+      <p class="title">Backend Developer</p>
+      <div class="contact">
+        <span>chehyeonyeong@gmail.com</span>
+        <a href="https://github.com/chehyeonyeong" target="_blank">GitHub</a>
+        <a href="https://velog.io/@gusdudco6" target="_blank">Blog</a>
+        <a href="resume.pdf" download>PDF 다운로드</a>
+      </div>
+    </header>
+
+    <div class="intro">
+      무신사가 지향하는 <strong>"AI Native"</strong>는 단순히 AI를 쓰는 것이 아니라, AI와 함께 성장의 속도를 바꾸는 것이라 믿습니다. 드림소프트웨어에서 증명한 자동화 역량과 데이터 무결성에 대한 집착을 바탕으로 무신사의 글로벌 성장에 기여하고 싶습니다.
+    </div>
+
+    <section>
+      <h2>Core Competencies</h2>
+      <div class="competencies">
+        <div class="competency">
+          <h3>AI 활용</h3>
+          <ul>
+            <li>사내 Claude Code 도입 추진: 마이그레이션 commands 제작 및 CLAUDE.md 작성</li>
+            <li>Claude, Cursor를 활용한 TDD 기반 마이그레이션 진행 중</li>
+            <li>코헤콘 주최: Manus AI로 이벤트 기획·운영 자동화</li>
+          </ul>
+        </div>
+        <div class="competency">
+          <h3>문제 해결</h3>
+          <ul>
+            <li>AOP 기반 로깅 시스템 설계로 중복 코드 80% 감소</li>
+            <li>JVM 튜닝으로 배치 처리 지연 시간 40% 개선</li>
+            <li>팀 컨벤션 정립으로 코드 리뷰 시간 50% 단축</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <div class="skills">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Spring Boot</span>
+        <span class="skill-tag">JPA</span>
+        <span class="skill-tag">MyBatis</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Oracle</span>
+        <span class="skill-tag">MSSQL</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">AWS EC2</span>
+        <span class="skill-tag">Nginx</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Claude Code</span>
+        <span class="skill-tag">CodeRabbit</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>드림소프트웨어주식회사</h3>
+          <span class="period">2024.09 - 2025.11 (1년 3개월)</span>
+        </div>
+        <p class="experience-role">제품개발팀 | 책임 | 정규직</p>
+        <p class="experience-desc">설비관리시스템(CMMS/EAM) 국내 시장점유율 1위 기업. 인천공항공사, 현대미포조선, 대웅제약 등 100여개 고객사 대상 B2B 솔루션 개발.</p>
+
+        <div class="highlight">
+          <h4>1. AI Native: 개발 패러다임의 전환</h4>
+          <ul>
+            <li><strong>Claude Code 기반 마이그레이션 자동화</strong> - 레거시(Struts) → Spring Boot 2.5 전환</li>
+            <li>Claude Code 기반 커스텀 CLI 명령어(Migration Agent) 구축</li>
+            <li class="result">성과: 모듈별 마이그레이션 소요 시간 83% 절감 (3일 → 0.5일)</li>
+          </ul>
+          <ul style="margin-top: 12px;">
+            <li><strong>신입사원 온보딩 시스템 체계화</strong> - Confluence 기반 End-to-End 핸즈온 가이드 구축</li>
+            <li class="result">성과: 신규 인력 실무 투입 준비 기간 50% 단축 (4주 → 2주)</li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <h4>2. Problem Solving: 기술로 비즈니스 가치 증명</h4>
+          <ul>
+            <li><strong>AOP로 중복 코드 80% 감소</strong> - Interceptor로 15개 컨트롤러 인증 로직 중앙 집중화</li>
+            <li>커스텀 어노테이션 + AOP로 67개 메서드 로깅 자동화</li>
+            <li class="result">성과: 중복 코드 80% 감소 (1,000줄 → 200줄), 로그 유실률 0%</li>
+          </ul>
+          <ul style="margin-top: 12px;">
+            <li><strong>JVM 튜닝을 통한 배치 성능 개선</strong> - G1GC → ParallelGC 전환 및 힙 메모리 최적화</li>
+            <li class="result">성과: Full GC 평균 소요 시간 40% 개선 (1.2초 → 0.7초)</li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <h4>3. Engineering Culture: SVN → GitHub 전환</h4>
+          <ul>
+            <li>Squash & Merge 정책 수립으로 히스토리 오염 방지</li>
+            <li>PR Template 설계로 코드 리뷰 품질 향상</li>
+            <li class="result">성과: 팀 내 코드 리뷰 참여율 100% 달성</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project</h2>
+      <div class="project-item">
+        <h3><a href="https://github.com/chehyeonyeong/cohi-chat" target="_blank">Cohi-Chat | 1:1 일정예약시스템</a></h3>
+        <p class="project-meta">2026.01 - 진행 중 | 팀 리더 & 백엔드 및 인프라 개발</p>
+        <p style="margin-bottom: 12px;"><strong>해결한 문제:</strong> 커피챗 일정 조율 비효율 → 실시간 빈 슬롯 확인 & Google Calendar 자동 동기화</p>
+        <ul>
+          <li>Claude Code로 TDD 기반 페어 프로그래밍, CodeRabbit AI 코드리뷰 도입 (PR당 평균 2건 버그 사전 탐지)</li>
+          <li>Calendar/TimeSlot/Booking CRUD API 설계 (Spring Boot 3.5, Java 21)</li>
+          <li>Google Calendar API 연동, Graceful Degradation 처리</li>
+          <li>AWS EC2 + Docker Compose 기반 컨테이너 배포, 테스트 커버리지 85%</li>
+        </ul>
+        <div class="project-stack">
+          <span class="skill-tag">Java 21</span>
+          <span class="skill-tag">Spring Boot 3.5</span>
+          <span class="skill-tag">JPA</span>
+          <span class="skill-tag">JWT</span>
+          <span class="skill-tag">Google Calendar API</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">AWS EC2</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Activity</h2>
+      <div class="activity-item">
+        <h3>COHE-CON 2026 | 주최자</h3>
+        <span class="period">2026.01.25</span>
+        <p>주니어 개발자 컨퍼런스 기획 및 운영 (참가자 19명, 연사 3명) | Manus AI로 웹사이트·발표자료 자동 생성</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education & Certification</h2>
+      <div class="edu-grid">
+        <div class="edu-item">
+          <h3>덕성여자대학교</h3>
+          <p>컴퓨터공학과 | 2019.03 - 2024.02</p>
+        </div>
+        <div class="edu-item">
+          <h3>SQLD</h3>
+          <p>한국데이터베이스진흥센터 | 2023.07</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <a href="https://github.com/chehyeonyeong" target="_blank">GitHub</a> |
+        <a href="https://velog.io/@gusdudco6" target="_blank">Blog</a> |
+        <a href="resume.pdf" download>PDF Download</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -42,7 +42,8 @@
   #text(size: 9pt)[
     chehyeonyeong\@gmail.com  |
     #link("https://github.com/chehyeonyeong")[GitHub]  |
-    #link("https://velog.io/@gusdudco6")[Blog]
+    #link("https://velog.io/@gusdudco6")[Velog]  |
+    #link("https://code-chy.tistory.com/")[Tistory]
   ]
 ]
 
@@ -55,7 +56,7 @@
   inset: 12pt,
   width: 100%,
 )[
-  무신사가 지향하는 *"AI Native"*는 단순히 AI를 쓰는 것이 아니라, AI와 함께 성장의 속도를 바꾸는 것이라 믿습니다. 드림소프트웨어에서 증명한 자동화 역량과 데이터 무결성에 대한 집착을 바탕으로 무신사의 글로벌 성장에 기여하고 싶습니다.
+  기술의 도입이 단순히 "사용"에 그치지 않고, *비즈니스의 성장 속도를 실질적으로 가속*하는 것에 집중하는 백엔드 개발자입니다. AI 에이전트를 활용해 반복적인 마이그레이션 업무를 자동화하고, AOP와 JVM 최적화를 통해 시스템의 안정성과 성능을 확보하는 등 엔지니어링 효율 극대화에 강점이 있습니다.
 ]
 
 // 핵심 역량
